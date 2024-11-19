@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men and Women in Rome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(270deg, #ff3d00, #ffea00, #00e676, #00b0ff, #d500f9);
+            background-size: 1500% 1500%;
+            animation: rainbowWaves 12s ease infinite;
+            color: white;
+            font-family: 'Karla', sans-serif;
+            text-align: center;
+        }
+
+        @keyframes rainbowWaves {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-family: 'Karla', sans-serif;
+            cursor: pointer;
+            background: black; /* Background color */
+            color: white; /* Text color */
+            border: 2px solid transparent; /* Border color */
+            border-radius: 5px;
+            transition: border-color 0.3s, background 0.3s;
+            font-size: 1.5rem;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing effect */
+        }
+
+        .button:hover {
+            border-color: #ff3d00; /* Border color on hover */
+            background: linear-gradient(90deg, #ff3d00, #ffea00, #00e676, #00b0ff, #d500f9); /* Background gradient on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Men and Women in Rome</h1>
+    <button class="button" onclick="openFactsTab()">FACTS</button>
+
+    <script>
+        // Function to open the FACTS tab
+        function openFactsTab() {
+            const newWindow = window.open();
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Facts about Rome</title>
+                    <style>
+                        body {
+                            margin: 0;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            background: linear-gradient(270deg, #ff3d00, #ffea00, #00e676, #00b0ff, #d500f9);
+                            background-size: 1500% 1500%;
+                            animation: rainbowWaves 12s ease infinite;
+                            color: white;
+                            font-family: 'Karla', sans-serif;
+                            text-align: center;
+                        }
+                        @keyframes rainbowWaves {
+                            0% { background-position: 0% 50%; }
+                            50% { background-position: 100% 50%; }
+                            100% { background-position: 0% 50%; }
+                        }
+                        h1 {
+                            font-size: 3rem;
+                            margin-bottom: 20px;
+                        }
+                        p {
+                            font-size: 1.5rem;
+                            max-width: 600px;
+                            line-height: 1.6;
+                            margin: 20px;
+                        }
+                        img {
+                            max-width: 90%;
+                            height: auto;
+                            margin-top: 20px;
+                            border-radius: 10px;
+                            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h2>Fact 1
+                    <p>
+                       Men in Rome usally be political and military positions. while women managed the household and family. However, Roman women had more rights compared to women in other ancient civilizations.
+                    </p>
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQxYwSQWCmzIf5AE9aTK86-Zx7DACcdjpyrA58D7gkJPz81YdBj" >
+                    <img src="data:image/jpeg;base64,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"/>
+                    <p>
+                      
+                    </p>
+                </body>
+                </html>
+            `);
+            newWindow.document.close(); // Close the document to finish loading
+        }
+    </script>
+</body>
+</html>
